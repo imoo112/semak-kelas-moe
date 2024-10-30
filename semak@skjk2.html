@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semakan Keputusan UPSA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Semakan Keputusan UPSA</h1>
+        <form id="checkForm">
+            <label for="icNumber">Masukkan Tarikh lahir:</label>
+            <input type="text" id="icNumber" required>
+            <button type="submit">Semak</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        // Contoh data keputusan SPM berdasarkan IC
+        const spmResults = {
+            "2/5/2013": "UPSA belum dilaksanakan.",
+             "7/7/2013": "UPSA belum dilaksanakan.",
+            "13/4/2013": "UPSA belum dilaksanakan.",
+            "5/3/2013": "UPSA belum dilaksanakan.",
+            "5/9/2013": "UPSA belum dilaksanakan.",
+            "21/4/2013": "UPSA belum dilaksanakan.",
+            "22/9/2013": "UPSA belum dilaksanakan.",
+            "11/1/2013": "UPSA belum dilaksanakan.",
+            "27/3/2013": "UPSA belum dilaksanakan.",
+            "16/9/2013": "UPSA belum dilaksanakan.",
+            
+            // Tambah IC dan keputusan lain di sini
+        };
+
+        document.getElementById('checkForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const icNumber = document.getElementById('icNumber').value;
+            const resultDiv = document.getElementById('result');
+            
+            if (spmResults.hasOwnProperty(icNumber)) {
+                resultDiv.textContent = `Keputusan: ${spmResults[icNumber]}`;
+                resultDiv.style.color = spmResults[icNumber] === 'Lulus' ? 'green' : 'red';
+            } else {
+                resultDiv.textContent = "Tarikh lahir tidak dijumpai.";
+                resultDiv.style.color = 'black';
+            }
+        });
+       
+    </script>
+</body>
+</html>
+<a> </a>
+<a href="https://www.semak@skjk2.com"> </a> 
+<a href="https://www.semak@skjk2.com></a>
+</body>
+</html>
